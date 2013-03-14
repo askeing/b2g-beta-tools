@@ -1,0 +1,7 @@
+*~
+*.zip
+*.conf
+VERSION
+b2g-distro/*
+mozilla-profile/*
+crashreport.txt
