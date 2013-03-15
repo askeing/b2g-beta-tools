@@ -62,6 +62,8 @@ function helper(){
 	echo -e "-B|--backup-only:\tbackup the phone to local machine"
 	# -R, --recover-only
 	echo -e "-R|--recover-only:\trecover the phone from local machine"
+	# -y,
+	echo -e "-y\tauto flash the image without asking"
 	# -h, --help
 	echo -e "-h|--help\tDisplay help."
 	echo -e "Example:"
@@ -121,13 +123,18 @@ fi
 ## show helper if nothing specified
 #if [ $# = 0 ]; then echo "Nothing specified"; helper; exit 0; fi
 
-## add getopt argument parsing
-TEMP=`getopt -o fF::ebrhv: --long flash,flash-only:,eng,version:,tef,shira,v1train,backup,recover-only,help \
-    -n 'error occured' -- "$@"`
+## distinguish platform
+case `uname` in
+	"Linux")
+		## add getopt argument parsing
+		TEMP=`getopt -o fF::ebrhv:: --long flash,flash-only::,eng,version::,tef,shira,v1train,backup,recover-only,help \
+	    -n 'error occured' -- "$@"`
 
-if [ $? != 0 ]; then echo "Terminating..." >&2; exit 1; fi
+		if [ $? != 0 ]; then echo "Terminating..." >&2; exit 1; fi
 
-eval set -- "$TEMP"
+		eval set -- "$TEMP";;
+	"Darwin");;
+esac
 
 ### TODO: -f can get an optional argument and download with build number or something
 ### write Filename and prevent for future modification
@@ -153,8 +160,10 @@ do
         -b|--backup) Backup_Flag=true; shift;;
         -B|--backup-only) BackupOnly_Flag=true; shift;;
         -r|--recover-only) RecoverOnly_Flag=true; shift;;
+        -y) AgreeFlash_Flag=true; shift;;
         -h|--help) helper; exit 0;;
         --) shift;break;;
+        "") shift;break;;
         *) echo error occured; exit 1;;
     esac
 done
@@ -201,11 +210,8 @@ if [ $RecoverOnly_Flag == true ]; then
 fi
 
 ####################
-# Check date and Files
+# Check Files
 ####################
-Yesterday=$(date --date='1 days ago' +%Y-%m-%d)
-Today=$(date +%Y-%m-%d)
-
 DownloadFilename=unagi.zip
 # tef v1.0.0: only user build
 if [ $Version_Flag == "tef" ]; then
@@ -320,11 +326,13 @@ unzip $Filename || exit -1
 # Flash device task
 ####################
 if [ $Flash_Flag == true ]; then
-	# make sure
-	read -p "Are you sure you want to flash your device? [y/N]" isFlash
-	if [ "$isFlash" != "y" ] && [ "$isFlash" != "Y" ]; then
-		echo -e "byebye."
-		exit 0
+	if [ $AgreeFlash_Flag != true ]; then
+		# make sure
+		read -p "Are you sure you want to flash your device? [y/N]" isFlash
+		if [ "$isFlash" != "y" ] && [ "$isFlash" != "Y" ]; then
+			echo -e "byebye."
+			exit 0
+		fi
 	fi
 
 	# ADB PATH
