@@ -120,9 +120,6 @@ if ! [ -z $CONF_ENGINEER ]; then
 fi
 
 
-## show helper if nothing specified
-#if [ $# = 0 ]; then echo "Nothing specified"; helper; exit 0; fi
-
 ## distinguish platform
 case `uname` in
 	"Linux")
