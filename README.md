@@ -30,7 +30,7 @@ Please create the config file `.enable_captiveportal.conf` first.
 ex:
 ```
 CONF_URL=http://this.is.example/index.html
-CONF_CONTENT=TEST_VALUE\\\n
+CONF_CONTENT=TEST_VALUE\\n
 ```
 
 ## get_crashreports.sh
