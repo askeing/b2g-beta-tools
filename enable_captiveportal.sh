@@ -5,8 +5,8 @@
 #
 # Config file:
 #   .enable_captiveportal.conf
-#       URL=http://this.is.example/index.html
-#       CONTENT=TEST_VALUE\\\n
+#       CONF_URL=http://this.is.example/index.html
+#       CONF_CONTENT=TEST_VALUE\\\n
 #
 #==========================================================================
 
