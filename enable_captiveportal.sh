@@ -5,19 +5,51 @@
 #
 # Config file:
 #   .enable_captiveportal.conf
-#       URL=http://this.is.example/index.html
-#       CONTENT=TEST_VALUE\\\n
+#       CONF_URL=http://this.is.example/index.html
+#       CONF_CONTENT=TEST_VALUE\\\n
 #
 #==========================================================================
 
 function helper_config(){
-    echo -e "The config file error."
+    echo -e "-h, --help\tShow usage."
+    echo -e "-s\t\tShow prefs file of device."
+    echo ""
+    echo -e "This script work with the config file."
     echo -e "\tfilename: .enable_captiveportal.conf"
     echo -e "\t===== File Content ====="
-    echo -e "\tURL=http://this.is.example/index.html"
-    echo -e "\tCONTENT=TEST_VALUE\\\n"
+    echo -e "\tCONF_URL=http://this.is.example/index.html"
+    echo -en "\t"; echo "CONF_CONTENT=TEST_VALUE\\\\\\n"
     echo -e "\t========================"
 }
+
+function show_prefs(){
+    set -e
+    if [ 'unknown' == $(adb get-state) ]; then
+	    echo "Unknown device"
+	    exit -1
+    fi
+    adb shell cat /data/b2g/mozilla/*.default/prefs.js
+}
+
+for x
+do
+	# -h, --help, -?: help
+	if [ "$x" = "--help" ] || [ "$x" = "-h" ] || [ "$x" = "-?" ]; then
+	    helper_config
+		exit 0
+	elif [ "$x" = "-s" ]; then
+	    show_prefs
+	    exit 0
+	else
+		echo -e "'$x' is an invalid command. See '--help'."
+		exit 0
+	fi
+done
+
+
+####################
+# Start
+####################
 
 cur_dir=$(pwd)
 
