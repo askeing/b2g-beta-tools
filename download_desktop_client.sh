@@ -168,8 +168,8 @@ if ! [ ${Version_Flag} == "mac" ]; then
     echo -e "Kill b2g..."
     kill $PID
     echo -e "\n=== VERSION ==="
-    grep "gecko.buildID" b2g/gaia/profile/prefs.js | sed "s/user_pref(\"//g" | sed "s/\");//g" | sed "s/\", \"/=/g" > version
-    cat version
+    grep "gecko.buildID" b2g/gaia/profile/prefs.js | sed "s/user_pref(\"//g" | sed "s/\");//g" | sed "s/\", \"/=/g" > VERSION-DESKTOP
+    cat VERSION-DESKTOP
 else
     echo "Mac desktop client, do not decompress."
 fi
