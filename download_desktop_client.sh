@@ -162,6 +162,7 @@ if ! [ ${Version_Flag} == "mac" ]; then
 
     # version info
     echo -e "\nRunning b2g to get BuildID..."
+    echo "user_pref('marionette.force-local', true);" >> ./b2g/gaia/profile/user.js
     ./b2g/b2g > /dev/null &
     PID=$!
     sleep 15
