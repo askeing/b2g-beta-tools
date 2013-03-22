@@ -1,9 +1,11 @@
 *~
 *.zip
+*.tar.bz2
+*.dmg
 *.conf
-VERSION-DESKTOP
+crashreport.txt
 VERSION
+VERSION-DESKTOP
 b2g-distro/*
 b2g/*
 mozilla-profile/*
-crashreport.txt
