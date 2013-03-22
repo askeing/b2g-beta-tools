@@ -21,6 +21,12 @@ CONF_ENGINEER=1
 The available version are:
 `100` (`tef`), `101` (`shira`), and `110` (`v1train`).
 
+
+## check_versions.sh
+
+Checking the version of B2G.
+
+
 ## enable_captiveportal.sh
 
 This script was written for enable captive portal for v1.0.1 and above.
