@@ -127,7 +127,7 @@ if [ $Download_Flag == true ]; then
 
 	# Download file
 	echo -e "Download latest desktop client build..."
-    wget $URL
+    wget -q $URL
 
 	# Check the download is okay
 	if [ $? -ne 0 ]; then
