@@ -12,9 +12,9 @@ function helper_config(){
     echo -e "The config file error."
     echo -e "\tfilename: .download_desktop_client.conf"
     echo -e "\t===== File Content ====="
-    echo -e "\tCONF_LINUX_32_URL=https://path.to.linux32bit.desktopclient/"
-    echo -e "\tCONF_LINUX_64_URL=https://path.to.linux64bit.desktopclient/"
-    echo -e "\tCONF_MAC_URL=https://path.to.mac.desktopclient/"
+    echo -e "\tCONF_LINUX_32_URL=https://path.to.linux32bit.desktopclient.file/"
+    echo -e "\tCONF_LINUX_64_URL=https://path.to.linux64bit.desktopclient.file/"
+    echo -e "\tCONF_MAC_URL=https://path.to.mac.desktopclient.file/"
     echo -e "\t========================"
 }
 
