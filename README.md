@@ -39,6 +39,20 @@ CONF_URL=http://this.is.example/index.html
 CONF_CONTENT=TEST_VALUE\\n
 ```
 
+## download_desktop_client.sh
+
+This script was written for download last desktop from server.
+
+Please create the config file `.download_desktop_client.conf` first.
+
+ex:
+```
+CONF_LINUX_32_URL=https://path.to.linux32bit.desktopclient.file/
+CONF_LINUX_64_URL=https://path.to.linux64bit.desktopclient.file/
+CONF_MAC_URL=https://path.to.mac.desktopclient.file/
+```
+
+
 ## get_crashreports.sh
 
 This is to get the crash reports of submitted/pending.
