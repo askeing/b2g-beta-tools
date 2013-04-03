@@ -323,7 +323,7 @@ unzip $Filename || exit -1
 # Flash device task
 ####################
 if [ $Flash_Flag == true ]; then
-	if [ $AgreeFlash_Flag != true ]; then
+	if ! [ $AgreeFlash_Flag == true ]; then
 		# make sure
 		read -p "Are you sure you want to flash your device? [y/N]" isFlash
 		if [ "$isFlash" != "y" ] && [ "$isFlash" != "Y" ]; then
