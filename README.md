@@ -21,15 +21,18 @@ CONF_ENGINEER=1
 The available version are:
 `100` (`tef`), `101` (`shira`), and `110` (`v1train`).
 
+PS: The default `.autoflash.conf` is not for normal users, please edit your own config file.
+
 
 ## check_versions.sh
 
-Checking the version of B2G.
+Checking the version of B2G on devices.
+Please make sure your devices can be detected by ADB tool.
 
 
 ## enable_captiveportal.sh
 
-This script was written for enable captive portal for v1.0.1 and above.
+This script was written for enable Captive Portal detection for v1.0.1 and above.
 
 Please create the config file `.enable_captiveportal.conf` first.
 
@@ -38,6 +41,8 @@ ex:
 CONF_URL=http://this.is.example/index.html
 CONF_CONTENT=TEST_VALUE\\n
 ```
+The [Bug 869394](https://bugzil.la/869394) turn on Captive Portal detection by default after 2013/05/09.
+
 
 ## download_desktop_client.sh
 
@@ -52,10 +57,13 @@ CONF_LINUX_64_URL=https://path.to.linux64bit.desktopclient.file/
 CONF_MAC_URL=https://path.to.mac.desktopclient.file/
 ```
 
+Visit [MDN: Using the B2G desktop client](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Using_the_B2G_desktop_client) for more detail information.
+
 
 ## get_crashreports.sh
 
 This is to get the crash reports of submitted/pending.
+
 
 ## grant_geo_permission.sh
 
