@@ -2,7 +2,6 @@
 *.zip
 *.tar.bz2
 *.dmg
-*.conf
 crashreport.txt
 VERSION
 VERSION-DESKTOP
