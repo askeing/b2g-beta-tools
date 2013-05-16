@@ -24,7 +24,7 @@ function helper(){
 	echo -e "This script was written for download last desktop from server.\n"
 	echo -e "Usage: ./download_desktop_client.sh [parameters]"
     # -v, --version
-    echo -e "-v|--version, \t give the target build version, ex: -v32; show available version if nothing specified."
+    echo -e "-v|--version\tThe target build version. Default: -v64\n\t\tshow available version if nothing specified."
 	# -h, --help
 	echo -e "-h|--help\tDisplay help."
 	echo -e "Example:"
