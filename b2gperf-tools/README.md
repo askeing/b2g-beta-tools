@@ -33,13 +33,16 @@ Install b2gperf.
 ```
 
 
-### Run
+### Edit Apps List
 
 Edit `appslist.txt` to fit your requirement. You can refer to the `template-appslist.txt` file.
 ```bash
 (.b2gperf)$ cp appslist-template.txt appslist.txt
 (.b2gperf)$ <YOUR_EDITOR> appslist.txt
 ```
+
+
+### Run
 
 Run script and wait the result.
 ```bash
