@@ -1,0 +1,15 @@
+Browser
+Calendar
+Camera
+Clock
+Contacts
+E-Mail
+FM Radio
+Gallery
+Phone
+Marketplace
+Messages
+Music
+Settings
+Usage
+Video
