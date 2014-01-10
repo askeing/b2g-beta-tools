@@ -37,7 +37,7 @@ Install b2gperf.
 
 Edit `appslist.txt` to fit your requirement. You can refer to the `template-appslist.txt` file.
 ```bash
-(.b2gperf)$ cp appslist-template.txt appslist.txt
+(.b2gperf)$ cp template-appslist.txt appslist.txt
 (.b2gperf)$ <YOUR_EDITOR> appslist.txt
 ```
 
