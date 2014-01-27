@@ -11,6 +11,7 @@
 #
 #==========================================================================
 
+DELAY=${DELAY:=5}
 APPS_LIST_FILE=appslist.txt
 OUTPUT_LOG=output.log
 SUMMARY_FILE=summary.txt
@@ -29,7 +30,7 @@ echo "### Apps List:"
 cat ${APPS_LIST_FILE} | sed ':a;N;$!ba;s/\n/, /g'
 
 echo -e "\n### Running b2gperf..."
-cat ${APPS_LIST_FILE} | xargs --no-run-if-empty -i b2gperf "{}" --delay 5 2>&1 | tee -a ${OUTPUT_LOG}
+cat ${APPS_LIST_FILE} | xargs --no-run-if-empty -i b2gperf "{}" --delay ${DELAY} 2>&1 | tee -a ${OUTPUT_LOG}
 #cat appslist.txt | sed ':a;N;$!ba;s/\n/" "/g' | sed 's/^/"/g' | sed 's/$/"/g' | xargs --no-run-if-empty b2gperf --delay 5 {} 2>&1 | tee -a result.txt
 
 echo -e "\n### Summary:"
