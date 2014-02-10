@@ -2,6 +2,7 @@
 
 This is support tools for [B2GPerf](https://github.com/mozilla/b2gperf), which is a tool for testing the performance of Firefox OS.
 
+NOTE: this tool can not upload data to Datazilla, only generate the data on your local machine.
 
 ## onekeyrun.sh
 
