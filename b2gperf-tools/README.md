@@ -46,6 +46,7 @@ Edit `appslist.txt` to fit your requirement. You can refer to the `template-apps
 
 Run script and wait the result.
 ```bash
+(.b2gperf)$ adb forward tcp:2828 tcp:2828
 (.b2gperf)$ ./onekeyrun.sh
 ```
 
