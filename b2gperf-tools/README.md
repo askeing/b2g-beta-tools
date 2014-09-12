@@ -30,7 +30,7 @@ $ source .b2gperf/bin/activate
 
 Install b2gperf.
 ```bash
-(.b2gperf)$ pip install b2gperf
+(.b2gperf)$ pip install --upgrade b2gperf
 ```
 
 
