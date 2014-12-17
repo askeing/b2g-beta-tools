@@ -1,5 +1,5 @@
 #!/bin/bash
-MAX_FILE=${MAX_FILE:-5}
+MAX_FILE=${MAX_FILE:-10}
 TAIL_VALUE=$((MAX_FILE+1))
 
 if [[ ${REMOTE_DIR} == "" ]]; then
