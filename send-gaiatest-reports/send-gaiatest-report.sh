@@ -5,10 +5,11 @@
 # For Jenkins
 #
 # setup the Git Repositories URL:
+#     https://github.com/Mozilla-TWQA/Gaiatest-Reports.git with identify trusted computer, or
 #     https://user:pwd@github.com/Mozilla-TWQA/Gaiatest-Reports.git
-#     gh-pages
+#     branch: gh-pages
 #
-# copy artifacts from upstream jobs (version with Build-ID, and html reports)
+# copy artifacts from upstream jobs (version with BuildID, and html reports)
 #     push to smoketest/ and non-smoketest/ folders
 #
 #
@@ -34,7 +35,6 @@ git pull
 
 
 ### Print Version Info
-BuildID:=${BuildID:=Build-ID}
 echo "Build ID : ${BuildID}"
 BuildID_YEAR=${BuildID:0:4}
 BuildID_MONTH=${BuildID:4:2}
