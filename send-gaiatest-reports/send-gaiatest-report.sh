@@ -4,9 +4,11 @@
 #
 # For Jenkins
 #
+# Input: DEVICE_NAME, BRANCH_NAME
+#
 # setup the Git Repositories URL:
-#     https://github.com/Mozilla-TWQA/Gaiatest-Reports.git with identify trusted computer, or
-#     https://user:pwd@github.com/Mozilla-TWQA/Gaiatest-Reports.git
+#     git@github.com:Mozilla-TWQA/Gaiatest-Reports.git with identify trusted computer, or
+#     https://{USER}:{PWD}@github.com/Mozilla-TWQA/Gaiatest-Reports.git
 #     branch: gh-pages
 #
 # copy artifacts from upstream jobs (version with BuildID, and html reports)
@@ -87,7 +89,7 @@ echo "<a href="./non-smoketest.html">${BuildID_FORMAT} Non-Smoketest Report</a>"
 ### Create commit for reports
 git add index.html
 git add ${BuildID_YEAR}/
-git commit -am "HTML Report of Hamachi Master ${BuildID} Build."
+git commit -am "HTML Report of ${DEVICE_NAME} ${BRANCH_NAME} ${BuildID} Build."
 
 
 ### Push to Github
